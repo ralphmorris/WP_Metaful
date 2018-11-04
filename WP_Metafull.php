@@ -7,7 +7,7 @@ class WP_Metafull
     protected $repeaterName;
 
     /**
-     * Set up TD_Meta with either the current post id or the given one
+     * Set up WP_Metafull with either the current post id or the given one
      * 
      * @param integer $post_id
      */
@@ -153,7 +153,7 @@ class WP_Metafull
      * @param  string $field
      * @param  integer $item_key
      * @param  string $repeaterName
-     * @return TD_Meta->field()
+     * @return WP_Metafull->field()
      */
     public function repeaterItem($field, $item_key, $repeaterName = null)
     {
@@ -215,7 +215,7 @@ class WP_Metafull
      * 
      * @param  string $value
      * @param  boolean $escape
-     * @return TD_Meta shouldEscape
+     * @return WP_Metafull shouldEscape
      */
     protected function prepareReturn($value, $escape)
     {
