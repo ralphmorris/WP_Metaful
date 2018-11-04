@@ -1,13 +1,13 @@
 <?php
 
-class WP_Metafull
+class WP_Metaful
 {
     protected $postMeta;
 
     protected $repeaterName;
 
     /**
-     * Set up WP_Metafull with either the current post id or the given one
+     * Set up WP_Metaful with either the current post id or the given one
      * 
      * @param integer $post_id
      */
@@ -153,7 +153,7 @@ class WP_Metafull
      * @param  string $field
      * @param  integer $item_key
      * @param  string $repeaterName
-     * @return WP_Metafull->field()
+     * @return WP_Metaful->field()
      */
     public function repeaterItem($field, $item_key, $repeaterName = null)
     {
@@ -215,7 +215,7 @@ class WP_Metafull
      * 
      * @param  string $value
      * @param  boolean $escape
-     * @return WP_Metafull shouldEscape
+     * @return WP_Metaful shouldEscape
      */
     protected function prepareReturn($value, $escape)
     {
