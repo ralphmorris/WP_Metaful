@@ -70,7 +70,7 @@ echo $meta->date('date_field');
 
 ### ACF Post Object
 ```php
-echo $meta->postObject('post_id');
+$postObject = $meta->postObject('post_id');
 ```
 
 ### ACF Repeater
