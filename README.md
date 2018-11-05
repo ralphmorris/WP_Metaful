@@ -82,7 +82,7 @@ Basic usage. Always pass the $key once you are inside the loop so that we can lo
 
 		<?php foreach ($repeater as $key => $value): ?>
 
-			<p><?php echo $meta->repeaterItem('repeater_item', $key); ?></p>
+			<p><?php echo $meta->repeaterItem('sub_field_key', $key); ?></p>
 
 		<?php endforeach ?>
 
@@ -91,7 +91,23 @@ Basic usage. Always pass the $key once you are inside the loop so that we can lo
 <?php endif ?>
 ```
 #### Advanced Repeater Usage:
+
+##### $meta->repeaterKey()
+
 If you would like to use the other API methods for outputting specific field types but are inside a repeater, you can do so with the below example. We will use the image field for this example.
 ```php
 echo $meta->image($meta->repeaterKey('media_post_id', $key));
+```
+
+##### $meta->getRepeaterName()
+
+The above is a protected method, however it can be used by passing a third parmeter to the repeaterItem() or repeaterKey() methods. 'Why' you ask? This is a bit of an edge case but if you are not in a foreach loop but would like to output a piece of meta that is inside a repeater field you can also specifiy this as per the below example:
+```php
+$secondItemInTheRepeater = $meta->repeaterItem('sub_field_key', 2, 'repeater_name');
+```
+
+### Debugging
+The below outputs all the post meta as an array.
+```php
+$meta->all();
 ```
