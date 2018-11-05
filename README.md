@@ -1,6 +1,6 @@
 # WP_Metaful
 
-A simple wrapper around the WordPress function get_post_meta() allowing us to retrieve all the post meta for a given post within one query and easily output different fields using a simple and intuitive API.
+A simple wrapper around the WordPress function get_post_meta() allowing you to retrieve all the post meta for a given post within one query and easily output different fields using a simple and intuitive API.
 
 ## ACF Integration
 
@@ -111,3 +111,6 @@ The below outputs all the post meta as an array.
 ```php
 $meta->all();
 ```
+## TODO
+
+I'd still like to add ACF Flexible Content Field support but the opportunity hasn't come up yet. If you have any other ideas feel free to reach out!
