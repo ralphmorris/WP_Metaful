@@ -101,7 +101,7 @@ echo $meta->image($meta->repeaterKey('media_post_id', $key));
 
 ##### $meta->getRepeaterName()
 
-The above is a protected method, however it can be used by passing a third parmeter to the repeaterItem() or repeaterKey() methods. 'Why' you ask? This is a bit of an edge case but if you are not in a foreach loop but would like to output a piece of meta that is inside a repeater field you can also specifiy this as per the below example:
+The above is a protected method, however it can be utilised by passing a third parmeter to the repeaterItem() or repeaterKey() methods. 'Why' you ask? This is a bit of an edge case but if you are not in a foreach loop but would like to output a piece of meta that is inside a repeater field you can also specifiy this as per the below example:
 ```php
 $secondItemInTheRepeater = $meta->repeaterItem('sub_field_key', 2, 'repeater_name');
 ```
