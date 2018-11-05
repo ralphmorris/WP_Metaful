@@ -29,14 +29,52 @@ You are now free to call the API methods as required.
 ```php
 echo $meta->field('my_field');
 ```
-By default the output is escaped. You can set this to false by passing second parameter of false.
+By default the output is escaped. You can set this to false by passing a second parameter of false.
 
 ### Standard field
 ```php
 echo $meta->field('my_field', false);
 ```
 
+### ACF Image field
+```php
+echo $meta->image('media_post_id');
+```
+You can specify the size of the image in the second parameter if required.
+```php
+echo $meta->image('media_post_id', 'your-thumbnail-size');
+```
+
+### ACF Image field. Output URL to image
+```php
+echo $meta->imageSrc('media_post_id');
+```
+Again, you can specify the size of the image in the second parameter if required.
+```php
+echo $meta->imageSrc('media_post_id', 'your-thumbnail-size');
+```
+
+### ACF Page Link field
+```php
+echo $meta->link('post_id');
+```
+
+### Date field
+```php
+// Optional params
+public function date($field, $format = 'D m Y', $createFromFormat = 'Y-m-d H:i:s');
+
+// Usage
+echo $meta->date('date_field');
+```
+
+### ACF Post Object
+```php
+echo $meta->postObject('post_id');
+```
+
 ### ACF Repeater
+Basic usage. Always pass the $key once you are inside the loop so that we can lookup the correct field name at he correct point in the repeater.
 ```php
 <?php if ($repeater = $meta->repeater('repeater_field')): ?>
 	
@@ -51,4 +89,9 @@ echo $meta->field('my_field', false);
 	</div>
 
 <?php endif ?>
+```
+#### Advanced Repeater Usage:
+If you would like to use the other API methods for outputting specific field types but are inside a repeater, you can do so with the below example. We will use the image field for this example.
+```php
+echo $meta->image($meta->repeaterKey('media_post_id', $key));
 ```
